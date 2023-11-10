@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/coordinate_root"
-    tools:context=".MainActivity">
+    android:id="@+id/toastSnakeFragment"
+    tools:context=".core.toast.ToastSnakeFragment">
 
     <ImageView
         android:id="@+id/toast"

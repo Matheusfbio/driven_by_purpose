@@ -7,20 +7,20 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="br.com.mfdesenvilvimento.androidwiki.ui.MainFragment"
+        android:name="br.com.mfdesenvilvimento.driven_by_purpose.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_blankFragment"
-            app:destination="@id/blankFragment" />
+            android:id="@+id/action_mainFragment_to_toastSnakeFragment"
+            app:destination="@id/toastSnakeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/blankFragment"
-        android:name="br.com.mfdesenvilvimento.androidwiki.core.toast.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" >
+        android:id="@+id/toastSnakeFragment"
+        android:name="br.com.mfdesenvilvimento.driven_by_purpose.core.toast.ToastSnakeFragment"
+        android:label="fragment_toast_snake"
+        tools:layout="@layout/fragment_toast_snake" >
         <action
-            android:id="@+id/action_blankFragment_to_mainFragment2"
+            android:id="@+id/action_toastSnakeFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
 </navigation>
