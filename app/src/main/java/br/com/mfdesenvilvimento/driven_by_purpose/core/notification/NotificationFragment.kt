@@ -137,7 +137,7 @@ class NotificationFragment : Fragment(R.layout.fragment_notification) {
             // esse icone nao aparece mais e esta presente apenas para manter compatibilidade
             // em aparelhos antigos. Em compensação se ganhou mais espaço para os titulos
             // // https://android-developers.googleblog.com/2016/06/notifications-in-android-n.html
-            R.drawable.faz_o_l,
+            R.mipmap.ic_launcher,
             actionTitle,
             updateAction
         )

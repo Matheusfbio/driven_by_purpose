@@ -7,21 +7,16 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="br.com.mfdesenvilvimento.driven_by_purpose.MainFragment"
+        android:name="br.com.mfdesenvilvimento.driven_by_purpose.ui.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_systematic_theology" >
         <action
             android:id="@+id/action_mainFragment_to_notificationFragment"
             app:destination="@id/notificationFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/toastSnakeFragment"
-        android:name="br.com.mfdesenvilvimento.driven_by_purpose.core.toast.ToastSnakeFragment"
-        android:label="fragment_toast_snake"
-        tools:layout="@layout/fragment_toast_snake" >
         <action
-            android:id="@+id/action_toastSnakeFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_mainFragment_to_apiFragment"
+            app:destination="@id/apiFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/notificationFragment"
@@ -30,6 +25,15 @@
         tools:layout="@layout/fragment_notification" >
         <action
             android:id="@+id/action_notificationFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/apiFragment"
+        android:name="br.com.mfdesenvilvimento.driven_by_purpose.ui.ApiFragment"
+        android:label="fragment_api"
+        tools:layout="@layout/fragment_api" >
+        <action
+            android:id="@+id/action_apiFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
 </navigation>
