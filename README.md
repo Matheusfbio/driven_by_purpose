@@ -1,6 +1,6 @@
 # Driven by Purpose
 
-**Welcome to Driven by Purpose! **
+**Welcome to Driven by Purpose!**
 
 This is a project dedicated to helping and storing biblical study content for a local church
 ## Overview
