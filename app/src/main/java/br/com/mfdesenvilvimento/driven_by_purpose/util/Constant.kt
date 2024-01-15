@@ -1,4 +1,4 @@
-package br.com.mfdesenvilvimento.driven_by_purpose.data.settings
+package br.com.mfdesenvilvimento.driven_by_purpose.util
 
 import retrofit2.Retrofit
 

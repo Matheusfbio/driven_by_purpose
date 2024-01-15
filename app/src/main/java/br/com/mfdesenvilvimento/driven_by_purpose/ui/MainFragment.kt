@@ -15,6 +15,6 @@ class MainFragment : Fragment(R.layout.fragment_systematic_theology) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentSystematicTheologyBinding.bind(view)
-        binding.btTeologiaSistematica.setOnClickListener { navTo(R.id.apiFragment) }
+        binding.btTeologiaSistematica.setOnClickListener { navTo(R.id.notificationFragment) }
     }
 }
