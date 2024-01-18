@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
+import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
 
 plugins {
     kotlin("kapt")
@@ -78,6 +79,10 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     // Retrofit with Scalar Converter
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
+
+
 
     // OKHttp
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))

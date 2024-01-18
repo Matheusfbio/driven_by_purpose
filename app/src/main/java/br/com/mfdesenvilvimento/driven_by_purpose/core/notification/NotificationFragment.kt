@@ -37,7 +37,7 @@ class NotificationFragment : Fragment(R.layout.fragment_notification) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initToolbar(binding.toolbar)
+        initToolbar(binding.btnToolbar)
     }
 
 

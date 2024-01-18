@@ -1,4 +1,4 @@
- package br.com.mfdesenvilvimento.driven_by_purpose.ui
+ package br.com.mfdesenvilvimento.driven_by_purpose.ui.screens
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
