@@ -1,4 +1,4 @@
-package br.com.mfdesenvilvimento.driven_by_purpose.data.model
+package br.com.mfdesenvilvimento.driven_by_purpose.data.dto
 
 data class Attributes(
     val categoria: String,
