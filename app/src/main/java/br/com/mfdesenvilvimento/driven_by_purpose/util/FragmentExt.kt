@@ -18,7 +18,7 @@ fun Fragment.snake(view: View, msg: String) = Snackbar.make(view, msg, Snackbar.
 
 fun Fragment.startActivity(clazz: Class<*>, name: String = "", args: Bundle = Bundle()){
     val intent = Intent(requireContext(), clazz).apply {
-        if(!(name.isNullOrEmpty() && args.isEmpty)) {
+        if(!(name.isEmpty() && args.isEmpty)) {
             putExtra(name,args)
         }
     }

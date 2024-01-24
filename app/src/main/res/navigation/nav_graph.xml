@@ -7,20 +7,21 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="br.com.mfdesenvilvimento.driven_by_purpose.MainFragment"
+        android:name="br.com.mfdesenvilvimento.driven_by_purpose.ui.screens.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_systematic_theology" >
         <action
-            android:id="@+id/action_mainFragment_to_toastSnakeFragment"
-            app:destination="@id/toastSnakeFragment" />
+            android:id="@+id/action_mainFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+
     </fragment>
     <fragment
-        android:id="@+id/toastSnakeFragment"
-        android:name="br.com.mfdesenvilvimento.driven_by_purpose.core.toast.ToastSnakeFragment"
-        android:label="fragment_toast_snake"
-        tools:layout="@layout/fragment_toast_snake" >
+        android:id="@+id/notificationFragment"
+        android:name="br.com.mfdesenvilvimento.driven_by_purpose.core.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" >
         <action
-            android:id="@+id/action_toastSnakeFragment_to_mainFragment"
+            android:id="@+id/action_notificationFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
     </fragment>
 </navigation>
