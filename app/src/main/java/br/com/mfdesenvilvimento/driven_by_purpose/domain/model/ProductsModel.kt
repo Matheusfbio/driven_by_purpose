@@ -3,7 +3,7 @@ package br.com.mfdesenvilvimento.driven_by_purpose.domain.model
 import br.com.mfdesenvilvimento.driven_by_purpose.data.dto.Attributes
 
 data class ProductsModel(
-    val categoria: String,
+    var categoria: String,
     val createdAt: String,
     val description: String,
     val locale: String,
@@ -15,5 +15,5 @@ data class ProductsModel(
 )
 
 fun Attributes.toDomain() = ProductsModel(
-    categoria, createdAt, description, locale, publishedAt, slug, title, updatedAt, valor
+    categoria = categoria, createdAt = createdAt, description = description, locale = locale, publishedAt = publishedAt, slug = slug, title = title, updatedAt = updatedAt, valor = valor
 )

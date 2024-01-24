@@ -1,11 +1,11 @@
- package br.com.mfdesenvilvimento.driven_by_purpose.ui.screens
+ package br.com.mfdesenvilvimento.driven_by_purpose.ui.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import br.com.mfdesenvilvimento.driven_by_purpose.R
 import br.com.mfdesenvilvimento.driven_by_purpose.databinding.ActivityMainBinding
-
+import dagger.hilt.android.AndroidEntryPoint
 
  class MainActivity : AppCompatActivity() {
 
