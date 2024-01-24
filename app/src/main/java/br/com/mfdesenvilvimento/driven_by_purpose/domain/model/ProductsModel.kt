@@ -1,8 +1,6 @@
 package br.com.mfdesenvilvimento.driven_by_purpose.domain.model
 
 import br.com.mfdesenvilvimento.driven_by_purpose.data.dto.Attributes
-import br.com.mfdesenvilvimento.driven_by_purpose.data.dto.Data
-import br.com.mfdesenvilvimento.driven_by_purpose.data.dto.Meta
 
 data class ProductsModel(
     val categoria: String,

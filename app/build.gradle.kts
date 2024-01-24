@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.kapt3.base.Kapt
 import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
 
@@ -7,6 +8,9 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
     id("com.google.dagger.hilt.android")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -62,6 +66,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("com.android.support:support-v13:28.0.0")
     val navVersion = "2.5.3"
     implementation ("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation ("androidx.navigation:navigation-ui-ktx:$navVersion")
@@ -92,5 +97,18 @@ dependencies {
     // Lifecycle components
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+
+    //Caroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+    //Coroutine Lifecycle Scopes
+    implementation("androidx.lifecycle: lifecycle-runtime-ktx:2.5.1")
+
+    //room
+    implementation("androidx.room:room-runtime:2.5.0")
+    kapt("androidx.room:room-compiler: 2.5.0")
+    implementation("androidx.room:room-ktx:2.5.0")
+
 
 }
