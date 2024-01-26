@@ -1,4 +1,4 @@
-package br.com.mfdesenvilvimento.driven_by_purpose.ui.screens
+package br.com.mfdesenvilvimento.driven_by_purpose
 
 import android.os.Bundle
 import android.view.View

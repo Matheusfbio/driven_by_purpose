@@ -1,67 +1,57 @@
 package br.com.mfdesenvilvimento.driven_by_purpose.core.notification
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
+import br.com.mfdesenvilvimento.driven_by_purpose.adapter.TopNotificationAdapter
+import br.com.mfdesenvilvimento.driven_by_purpose.data.api.StrapiApi
+import br.com.mfdesenvilvimento.driven_by_purpose.data.api.StrapiApiUtilities
+import br.com.mfdesenvilvimento.driven_by_purpose.data.dto.Attributes
 import br.com.mfdesenvilvimento.driven_by_purpose.databinding.FragmentNotificationBinding
 import br.com.mfdesenvilvimento.driven_by_purpose.helper.initToolbar
-import br.com.mfdesenvilvimento.driven_by_purpose.ui.adapter.ProductsAdapter
-import br.com.mfdesenvilvimento.driven_by_purpose.ui.viewmodel.ProductsViewModel
-import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-@AndroidEntryPoint
 class NotificationFragment : Fragment() {
 
     private var _binding: FragmentNotificationBinding? = null
     private val binding get() = _binding!!
-    private lateinit var adapterMain: ProductsAdapter
-    private lateinit var viewModelMain: ProductsViewModel by viewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         _binding = FragmentNotificationBinding.inflate(inflater,container, false)
 
-        adapterMain = ProductsAdapter()
+        getTopCurrencyList()
 
         return binding.root
     }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override  fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerView.apply {
-            adapter = adapterMain
-            layoutManager = GridLayoutManager(this@NotificationFragment, 2)
-            setHasFixedSize(true)
-        }
-
-        lifecycleScope.launchWhenCreated {
-            viewModelMain.state.collect{
-                when{
-                    it.load -> binding.progressBar.visibility =  View.VISIBLE
-                    it.success.isNotEmpty() -> {
-                        binding.progressBar.visibility = View.GONE
-                        adapterMain.submitList(it.success)
-                    }
-                    it.fail.isNotBlank() -> {
-                        binding.progressBar.visibility = View.GONE
-                        Toast.makeText(this@NotificationFragment, it.fail, Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
-        }
 
         initToolbar(binding.btnToolbar)
-    }
+  }
 
+    private fun getTopCurrencyList() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val res = StrapiApiUtilities.getInstance().create(StrapiApi::class.java).getProducts()
+            withContext(Dispatchers.Main){
+                binding.topRecyclerView.adapter = TopNotificationAdapter(requireContext(),res.body()!!.data.toString())
+
+            }
+
+            Log.d("SHUBH","getTopCurrencyList: ${res.body()!!.data.toString()}")
+        }
+
+    }
 
     override fun onDestroy() {
         super.onDestroy()
