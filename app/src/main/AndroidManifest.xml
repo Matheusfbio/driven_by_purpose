@@ -16,24 +16,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.MainActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".ui.UserList"
-            android:exported="false" />
-        <activity
-            android:name=".ahsdkjfahlskdjf"
-            android:exported="false" />
-        <activity
-            android:name=".data.api.ApiActivity"
-            android:exported="false" />
-        <activity
             android:name=".Notification"
             android:exported="false"
             android:label="@string/title_activity_notification"
             android:theme="@style/Theme.Driven_by_purpose" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
